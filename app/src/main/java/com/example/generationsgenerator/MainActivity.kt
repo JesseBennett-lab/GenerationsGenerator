@@ -19,10 +19,11 @@ class MainActivity : AppCompatActivity() {
         val generateButton = findViewById<Button>(R.id.generateButton)
         val displayTextView = findViewById<TextView>(R.id.displayTextView)
 
+    generateButton.setOnClickListener {
         val year = birthYearEditText.text.toString().toInt()
         val generation = when (year) {
             in 1928..1945 -> "Silent Generation"
-            in 1946..1964 ->  "Baby Boomer"
+            in 1946..1964 -> "Baby Boomer"
             in 1965..1980 -> "Gen X"
             in 1981..1996 -> "Millennial"
             in 1997..2012 -> "Gen Z"
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             else -> "Unknown generation"
         }
         displayTextView.text = "Your generation: $generation"
-
+    }
 
 
 
